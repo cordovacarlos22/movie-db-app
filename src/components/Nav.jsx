@@ -12,7 +12,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="relative bg-black text-sm text-white flex justify-between items-center p-4">
+    <nav className="relative bg-black text-sm text-white flex flex-wrap justify-between items-center p-4">
       {/* Logo */}
       <section className="bg-yellow-400 text-black rounded-sm px-3 py-1">
         <p className="font-bold">IMdb</p>
@@ -63,7 +63,7 @@ const Nav = () => {
       </ul>
 
       {/* Search Bar */}
-      <section className="hidden md:block">
+      <section className=" m-2 md:m-0 md:block">
         <input
           type="text"
           placeholder="Search..."
