@@ -1,7 +1,4 @@
-
-
-
-export const fetchData = async () => {
+export const fetchData = async (category, page) => {
 
   const apiKey = import.meta.env.VITE_API_KEY;
   const apiReadAccessToken = import.meta.env.VITE_APIREADACCESSTOKEN;
@@ -12,7 +9,7 @@ export const fetchData = async () => {
   console.log('MBDO API Key:', mbdoApiKey); // Should log the value from .env 
 
   // ! Fetch data from the API endpoint
-  const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+  const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`;
   //?Create the fetch request options
   const options = {
     method: 'GET',
@@ -33,7 +30,10 @@ export const fetchData = async () => {
 };
 
 
-
+// //! categories for the movies
+// // {
+// popular, now_playing, top_rated, upcoming
+// // }
 
 
 
