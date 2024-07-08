@@ -1,19 +1,19 @@
 import React from 'react'
 import { fetchData } from '../db';
 import MovieCard from './MovieCard';
-const NowPlaying = () => {
 
+const Popular = () => {
   React.useEffect(() => {
-    fetchData("now_playing", 1)
-  }, [fetchData("now_playing", 1)]) // Fetch data only once when App component mounts
+    fetchData("popular", 1)
+  }, [fetchData("popular", 1)]) // Fetch data only once when App component mounts
 
-  let response = localStorage.getItem('now_playing');
+  let response = localStorage.getItem('popular');
   let data = JSON.parse(response);
   let movies = data[0].results
 
   return (
     <>
-      <h1 className='flex justify-center items-center '>Now Playing</h1>
+      <h1 className='flex justify-center items-center '>Popular</h1>
       <div className=' flex flex-wrap gap-2 m-2 p-2'>
 
         {movies && movies.map((movie, index) => (
@@ -35,4 +35,4 @@ const NowPlaying = () => {
   )
 }
 
-export default NowPlaying
+export default Popular
