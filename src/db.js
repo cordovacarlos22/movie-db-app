@@ -9,7 +9,7 @@ export const fetchData = async (category, page = 1) => {
   console.log('MBDO API Key:', mbdoApiKey); // Should log the value from .env 
 
   // ! Fetch data from the API endpoint
-  const url = `https://api.themoviedb.org/3/movie/${category}?language=en-US&${page}=1`;
+  const url = `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=${page}`;
   //?Create the fetch request options
   const options = {
     method: 'GET',
@@ -23,7 +23,7 @@ export const fetchData = async (category, page = 1) => {
     let data = await response.json();
     //? Log the fetched data to the console
     console.log(data);
-    localStorage.setItem('movies', JSON.stringify([data]))
+    localStorage.setItem(`${category}`, JSON.stringify([data]))
   } catch (error) {
     console.error(error);
   }
