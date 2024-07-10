@@ -18,7 +18,7 @@ export const fetchData = async (category, page = 1) => {
     let data = await response.json();
     //? Log the fetched data to the console
     // console.log(data);
-    localStorage.setItem(`${category}`, JSON.stringify([data]))
+    sessionStorage.setItem(`${category}`, JSON.stringify([data]))
   } catch (error) {
     console.error(error);
     alert(error);
