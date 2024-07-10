@@ -1,11 +1,12 @@
 import React from 'react'
-import NowPlaying from './NowPlaying';
+import NowPlayingMovies from './NowPlayingMovies'
+
+
 const Home = () => {
   return (
 
     <div className=' flex  flex-col '>
-     
-      <NowPlaying />
+      <NowPlayingMovies/>
     </div>
 
   )
