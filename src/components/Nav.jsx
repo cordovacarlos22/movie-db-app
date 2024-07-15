@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { navLinks } from '../navLinks';
 import hamburgerMenu from '../assets/menu.svg';
 import closeMenu from '../assets/close.svg'; // Assuming you have a close icon
@@ -6,16 +6,37 @@ import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  
+  const searchMovie = () => {
+    const apiReadAccessToken = import.meta.env.VITE_APIREADACCESSTOKEN;
+      const url = 'https://api.themoviedb.org/3/search/movie?query=garfield&include_adult=false&language=en-US&page=1';
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${apiReadAccessToken}`
+        }
+      };
+
+      fetch(url, options)
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => console.error('error:' + err));
+    }
+    
+  searchMovie();
+  
   return (
     <nav className="relative bg-black text-sm text-white flex flex-wrap justify-between items-center p-4">
       {/* Logo */}
       <section className="bg-yellow-400 text-black rounded-sm px-3 py-1">
-        <p className="font-bold">IMdb</p>
+        <p className="font-bold">TMHdb</p>
       </section>
 
       {/* Desktop Menu */}
@@ -63,13 +84,13 @@ const Nav = () => {
       </ul>
 
       {/* Search Bar */}
-      {/* <section className=" m-2 md:m-0 md:block">
+      <section className=" m-2 md:m-0 md:block">
         <input
           type="text"
           placeholder="Search..."
           className="p-2 rounded-md bg-gray-700 text-white"
         />
-      </section> */}
+      </section>
     </nav>
   );
 };
