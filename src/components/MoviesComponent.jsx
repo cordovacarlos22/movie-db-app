@@ -62,7 +62,7 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
 
   return (
     <>
-      
+
       <input
         type="text"
         placeholder="Search for a movie..."
@@ -75,7 +75,8 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
 
       <h1 className='flex justify-center items-center '>{componentTitle}</h1>
       <div className=' flex flex-wrap gap-2 m-1 p-2'>
-        {filteredMovies && filteredMovies.map((movie, index) => (
+        {filteredMovies.length ? (
+          filteredMovies.map((movie, index) => (
             <>
               <MovieCard
                 key={movie.id}
@@ -89,7 +90,13 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
               >
               </MovieCard>
             </>
-          ))}
+          ))
+        ) : (
+
+          <h1>No movies</h1>
+        )
+
+        }
 
       </div>
       <div className="flex justify-center items-center m-4">
