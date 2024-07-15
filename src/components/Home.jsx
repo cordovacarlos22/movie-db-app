@@ -3,10 +3,13 @@ import NowPlayingMovies from './NowPlayingMovies'
 
 
 const Home = () => {
+
+
   return (
 
     <div className=' flex  flex-col '>
-      <NowPlayingMovies/>
+      <NowPlayingMovies />
+
     </div>
 
   )
