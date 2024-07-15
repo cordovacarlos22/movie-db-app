@@ -23,7 +23,7 @@ const MovieCard = ({ id, index, movieUrl, rating, movieTitle, releaseDate, overv
           </p>
           <h2 className='truncate flex flex-wrap p-2'>{`${index}. ${movieTitle}`}</h2>
           <span> {formatDate(`${releaseDate}`)}</span>
-          
+
         </div>
       </section>
       <section className='absolute top-0 left-0 w-full  h-full bg-blue-500 text-white p-2 rounded opacity-0 hover:opacity-100 flex flex-col items-center justify-center text-center '>
