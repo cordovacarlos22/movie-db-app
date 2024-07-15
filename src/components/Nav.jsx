@@ -63,13 +63,13 @@ const Nav = () => {
       </ul>
 
       {/* Search Bar */}
-      <section className=" m-2 md:m-0 md:block">
+      {/* <section className=" m-2 md:m-0 md:block">
         <input
           type="text"
           placeholder="Search..."
           className="p-2 rounded-md bg-gray-700 text-white"
         />
-      </section>
+      </section> */}
     </nav>
   );
 };
