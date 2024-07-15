@@ -104,7 +104,7 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
 
 
       <h1 className='flex justify-center items-center '>{componentTitle}</h1>
-      <div className=' flex flex-wrap gap-2 m-1 p-2'>
+      <div className=' flex flex-wrap justify-center items-center gap-8 m-2 p-4'>
         {filteredMovies.length ? (
           filteredMovies.map((movie, index) => (
             <>
@@ -117,6 +117,7 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
                 releaseDate={movie.release_date}
                 movieTitle={movie.title}
                 section="Now Playing"
+                overview={movie.overview}
               >
               </MovieCard>
             </>
