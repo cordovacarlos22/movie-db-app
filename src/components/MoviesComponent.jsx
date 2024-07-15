@@ -7,6 +7,13 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredMovies = movies.filter(
+    movie => {
+      return movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+    }
+  );
 
   useEffect(() => {
     const getMovies = async () => {
@@ -55,10 +62,20 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
 
   return (
     <>
+      
+      <input
+        type="text"
+        placeholder="Search for a movie..."
+        className="border-2 rounded-sm w-full p-2"
+        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchTerm}
+
+      />
+
+
       <h1 className='flex justify-center items-center '>{componentTitle}</h1>
       <div className=' flex flex-wrap gap-2 m-1 p-2'>
-        {movies && movies
-          .map((movie, index) => (
+        {filteredMovies && filteredMovies.map((movie, index) => (
             <>
               <MovieCard
                 key={movie.id}
