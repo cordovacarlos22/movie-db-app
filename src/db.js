@@ -24,9 +24,3 @@ export const fetchData = async (category, page = 1) => {
     alert(error);
   }
 };
-
-
-// //! categories for the movies
-// // {
-// popular, now_playing, top_rated, upcoming
-// // }
