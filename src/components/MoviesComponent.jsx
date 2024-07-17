@@ -34,6 +34,7 @@ const MoviesComponent = ({ movieCategory, componentTitle }) => {
       } catch (err) {
         setError('Failed to fetch movies. Please try again later.');
       }
+      //? Simulate delay to show loading skeleton for a second
       setTimeout(() => { 
         setLoading(false)
       },1000);
