@@ -39,7 +39,7 @@ const App = () => {
             element: <UpComingMovies />,
           },
           {
-            path: '/moviedetails/:id',
+            path: '/title/:id',
             element: <MovieDetails />,
           },
         ]
