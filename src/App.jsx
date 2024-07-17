@@ -7,12 +7,15 @@ import NowPlayingMovies from './components/NowPlayingMovies';
 import PopularMovies from './components/PopularMovies';
 import TopRatedMovies from './components/TopRatedMovies';
 import UpComingMovies from './components/UpComingMovies';
+import ErrorPage from './components/ErrorPage';
+import MovieDetails from './components/MovieDetails';
 const App = () => {
 
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Nav />,
+      errorElement: <ErrorPage />,
       children:
         [
           {
@@ -34,6 +37,10 @@ const App = () => {
           {
             path: '/upcoming',
             element: <UpComingMovies />,
+          },
+          {
+            path: '/moviedetails/:id',
+            element: <MovieDetails />,
           },
         ]
     }
