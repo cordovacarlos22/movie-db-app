@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import LoadingSkeleton from './LoadingSkeleton';
+import MovieDetailsLoadingSkeleton from './MovieDetailsLoadingSkeleton';
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -43,7 +44,7 @@ const MovieDetails = () => {
     <>
       {loading ? (
         <>
-          <LoadingSkeleton />
+          <MovieDetailsLoadingSkeleton />
         </>
       ) : (
 
