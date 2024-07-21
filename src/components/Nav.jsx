@@ -12,26 +12,26 @@ const Nav = () => {
     setMenuOpen(!menuOpen);
   };
 
-  
+
   const searchMovie = () => {
     const apiReadAccessToken = import.meta.env.VITE_APIREADACCESSTOKEN;
-      const url = 'https://api.themoviedb.org/3/search/movie?query=garfield&include_adult=false&language=en-US&page=1';
-      const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: `Bearer ${apiReadAccessToken}`
-        }
-      };
+    const url = 'https://api.themoviedb.org/3/search/movie?query=garfield&include_adult=false&language=en-US&page=1';
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${apiReadAccessToken}`
+      }
+    };
 
-      fetch(url, options)
-        .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.error('error:' + err));
-    }
-    
+    fetch(url, options)
+      .then(res => res.json())
+      .then(json => console.log(json))
+      .catch(err => console.error('error:' + err));
+  }
+
   searchMovie();
-  
+
   return (
     <>
       <nav className="relative bg-black text-sm text-white flex flex-wrap justify-between items-center p-4">
@@ -59,7 +59,7 @@ const Nav = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <section className="md:hidden">
+        <section className="md:hidden mx-4">
           <button
             className="flex items-center space-x-2"
             onClick={toggleMenu}
@@ -70,7 +70,7 @@ const Nav = () => {
         </section>
 
         {/* Mobile Menu Links */}
-        <ul className={`absolute top-full left-0 w-full bg-white text-black shadow-md md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
+        <ul className={`absolute z-30 p-4  top-full left-0 w-full bg-white text-black shadow-md md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
           {navLinks.map(link => (
             <li key={link.path} className="border-b">
               <NavLink
@@ -87,15 +87,28 @@ const Nav = () => {
         </ul>
 
         {/* Search Bar */}
-        <section className=" m-2 md:m-0 md:block">
+        <form className=" m-auto md:m-2 md:block ">
           <input
             type="text"
-            placeholder="Search..."
-            className="p-2 rounded-md bg-gray-700 text-white"
+            placeholder="Search Movie from API "
+            className="p-2 rounded-l-md bg-gray-700 text-white"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
           />
-        </section>
+          <button
+            className='p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-400'
+            type='submit'
+
+          >
+            <NavLink
+              to={`/search/:${searchTerm}`}
+            >
+              Search
+            </NavLink>
+          </button>
+        </form>
       </nav>
-      <Outlet/>
+      <Outlet />
     </>
   );
 };
