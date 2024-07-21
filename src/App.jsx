@@ -9,6 +9,7 @@ import TopRatedMovies from './components/TopRatedMovies';
 import UpComingMovies from './components/UpComingMovies';
 import ErrorPage from './components/ErrorPage';
 import MovieDetails from './components/MovieDetails';
+import Search from './components/Search';
 const App = () => {
 
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const App = () => {
           {
             path: '/title/:id',
             element: <MovieDetails />,
+          },
+          {
+            path: '/search/:id',
+            element: <Search />,
           },
         ]
     }
