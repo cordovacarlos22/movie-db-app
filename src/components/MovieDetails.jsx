@@ -1,3 +1,6 @@
+/* This code snippet is a React component called `MovieDetails`. It is responsible for fetching and
+displaying details of a specific movie using data from an external API (in this case, The Movie
+Database API). Here's a breakdown of what the code does: */
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';

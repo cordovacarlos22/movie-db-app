@@ -1,3 +1,5 @@
+/* The code you provided is a React component called `MovieCard`. This component is responsible for
+rendering a card displaying information about a movie. Here's a breakdown of what the code is doing: */
 
 import { Link } from 'react-router-dom';
 import startIcon from '../assets/star-svg.svg'

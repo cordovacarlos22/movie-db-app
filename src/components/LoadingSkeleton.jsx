@@ -1,3 +1,7 @@
+/* This code snippet is a React functional component called `LoadingSkeleton`. It is used to display a
+loading skeleton UI while content is being fetched or loaded. The component structure includes
+nested `div` elements with specific classNames for styling using Tailwind CSS classes. The
+classNames define the layout, colors, and animations for the loading skeleton. */
 import React from 'react';
 
 const LoadingSkeleton = () => {

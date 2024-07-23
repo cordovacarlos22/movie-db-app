@@ -1,3 +1,5 @@
+/* This code snippet is a React component named `ErrorPage` that is used to display a custom error page
+for a 404 (page not found) error. */
 import React from 'react'
 import { useRouteError,Link } from "react-router-dom";
 
