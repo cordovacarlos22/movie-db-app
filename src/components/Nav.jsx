@@ -1,3 +1,11 @@
+/**
+ * The `Nav` component in this React code handles navigation, menu toggling, displaying links, and a
+ * search bar for searching movies from an API.
+ * @returns The `Nav` component is being returned, which consists of a navigation bar with a logo,
+ * desktop menu, mobile menu button, mobile menu links, and a search bar. The component also includes
+ * functionality to toggle the mobile menu, fetch movie data from an API, and perform a search based on
+ * the user input in the search bar.
+ */
 import React, { useEffect, useState } from 'react';
 import { navLinks } from '../navLinks';
 import hamburgerMenu from '../assets/menu.svg';

@@ -1,3 +1,5 @@
+/* This code snippet represents a React functional component called `Search`. Here's a breakdown of
+what the component does: */
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import LoadingSkeleton from './LoadingSkeleton';

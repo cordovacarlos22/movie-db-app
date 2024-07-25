@@ -1,3 +1,5 @@
+/* The above code is a React component called `MoviesComponent` that displays a list of movies based on
+a specified category. Here is a breakdown of what the code is doing: */
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../db';
 import MovieCard from './MovieCard';

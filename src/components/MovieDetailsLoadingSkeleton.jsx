@@ -1,3 +1,6 @@
+/* This code snippet is defining a React functional component called `MovieDetailsLoadingSkeleton`.
+This component is used to display a loading skeleton UI while data is being fetched or processed.
+The loading skeleton provides a visual indication to the user that content is loading. */
 import React from 'react'
 
 const MovieDetailsLoadingSkeleton = () => {

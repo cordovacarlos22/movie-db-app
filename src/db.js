@@ -1,3 +1,14 @@
+/**
+ * The `fetchData` function fetches movie data from a specified category using an API endpoint and
+ * stores the data in session storage.
+ * @param category - The `category` parameter in the `fetchData` function represents the type of movie
+ * data you want to fetch from the API. It could be a specific category like "popular", "top_rated",
+ * "now_playing", or any other category available in the API. This parameter is used to construct
+ * @param [page=1] - The `page` parameter in the `fetchData` function is used to specify the page
+ * number of results to retrieve from the API. By default, it is set to 1 if not provided when calling
+ * the function. This allows you to fetch data from different pages of the API endpoint, especially
+ * useful
+ */
 export const fetchData = async (category, page = 1) => {
 
   // const apiKey = import.meta.env.VITE_API_KEY;
